@@ -1,0 +1,3 @@
+interface Pegawai {
+    double hitungTotalGaji();
+}
