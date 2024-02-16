@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.text.NumberFormat;
 import java.util.Locale;
-
 import pegawai.*;
 
 public class Main {
@@ -21,7 +20,7 @@ public class Main {
         System.out.print("Tunjangan Anak: ");
         int tunjanganAnak = scanner.nextInt();
 
-        // Jika jamMasuk dan jamPulang berada dalam rentang 1-24
+        // jika jam masuk dan jam pulang tidak berada di rentang 1-24
         if ((jamMasuk < 1 || jamMasuk > 24) || (jamPulang < 1 || jamPulang > 24)) {
             System.out.println("Jam tidak valid. Harus antara  1-24.");
             return; // Hentikan eksekusi program
@@ -51,7 +50,7 @@ public class Main {
         NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.of("id", "ID"));
 
         String formatGaji = formatter.format(gaji);
-        
+
         System.out.println("Gaji total: " + formatGaji);
 
         scanner.close();
