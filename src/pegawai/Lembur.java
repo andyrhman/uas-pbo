@@ -1,3 +1,5 @@
+package pegawai;
+
 class Lembur {
     private int jamLembur;
 
@@ -5,7 +7,7 @@ class Lembur {
         this.jamLembur = jamLembur;
     }
 
-    public double hitung() {
+    public double hitung(double jumlah) {
         return jamLembur * 10000;
     }
 }

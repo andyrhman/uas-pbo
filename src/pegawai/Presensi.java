@@ -1,3 +1,5 @@
+package pegawai;
+
 class Presensi {
     private int waktuTiba;
     private int waktuBerangkat;

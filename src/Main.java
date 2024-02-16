@@ -1,11 +1,12 @@
 import java.text.NumberFormat;
 import java.util.Locale;
+import pegawai.*;
 
 public class Main {
     public static void main(String[] args) {
-        Supervisor supervisor = new Supervisor(2);
+        Supervisor supervisor = new Supervisor(1);
 
-        supervisor.aturPresensi(7, 16);
+        supervisor.aturPresensi(5, 16);
 
         supervisor.aturLembur(0);
 

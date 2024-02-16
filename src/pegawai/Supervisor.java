@@ -1,5 +1,8 @@
-class Supervisor implements Pegawai {
+package pegawai;
+
+public class Supervisor implements Pegawai {
     private double GAJI_POKOK = 10000000;
+    private double LEMBUR_PER_JAM = 10000;
     private double BIAYA_TRANSPORTASI = 1000000;
     private double TUNJANGAN_ISTRI = 300000;
     private double TUNJANGAN_ANAK;
@@ -22,7 +25,7 @@ class Supervisor implements Pegawai {
 
     @Override
     public double hitungTotalGaji() {
-        double totalGaji = GAJI_POKOK + BIAYA_TRANSPORTASI + TUNJANGAN_ISTRI + TUNJANGAN_ANAK + lembur.hitung();
+        double totalGaji = GAJI_POKOK + BIAYA_TRANSPORTASI + TUNJANGAN_ISTRI + TUNJANGAN_ANAK + lembur.hitung(LEMBUR_PER_JAM);
         if (presensi.datangTerlambat()) {
             totalGaji -= presensi.menitTelat() * 100000;
         }
