@@ -1,5 +1,5 @@
 package pegawai;
 
-interface Pegawai {
-    double hitungTotalGaji();
+public interface Pegawai {
+    double hitungGaji(int jamMasuk, int jamPulang, int tunjanganAnak);
 }

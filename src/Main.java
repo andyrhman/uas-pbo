@@ -1,21 +1,57 @@
+import java.util.Scanner;
 import java.text.NumberFormat;
 import java.util.Locale;
+
 import pegawai.*;
 
 public class Main {
+    @SuppressWarnings("resource")
     public static void main(String[] args) {
-        Supervisor supervisor = new Supervisor(1);
+        Scanner scanner = new Scanner(System.in);
 
-        supervisor.aturPresensi(5, 16);
+        System.out.println("Masukkan Kode (Supervisor = SPV, HRD = HRD, Teknisi = TKN, Karyawan = KRY): ");
+        String kode = scanner.nextLine().toUpperCase();
 
-        supervisor.aturLembur(0);
+        System.out.print("Jam Masuk: ");
+        int jamMasuk = scanner.nextInt();
 
-        double totalGaji = supervisor.hitungTotalGaji();
+        System.out.print("Jam Pulang: ");
+        int jamPulang = scanner.nextInt();
 
-        NumberFormat formatgaji = NumberFormat.getCurrencyInstance(Locale.of("id", "ID"));
+        System.out.print("Tunjangan Anak: ");
+        int tunjanganAnak = scanner.nextInt();
 
-        String gaji = formatgaji.format(totalGaji);
+        // Pastikan jamMasuk dan jamPulang berada dalam rentang 1-24
+        if ((jamMasuk < 1 || jamMasuk > 24) || (jamPulang < 1 || jamPulang > 24)) {
+            System.out.println("Jam tidak valid. Harus antara  1-24.");
+            return; // Hentikan eksekusi program
+        }
 
-        System.out.println("Total gaji: " + gaji);
+        Pegawai pegawai;
+        switch (kode) {
+            case "SPV":
+                pegawai = new Supervisor();
+                break;
+            case "HRD":
+                pegawai = new HRD();
+                break;
+            // case "TKN":
+            //     pegawai = new Teknisi();
+            //     break;
+            // case "KRY":
+            //     pegawai = new Karyawan();
+            //     break;
+            default:
+                System.out.println("Kode tidak valid");
+                return;
+        }
+
+        double gaji = pegawai.hitungGaji(jamMasuk, jamPulang, tunjanganAnak);
+
+        NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.of("id", "ID"));
+        String formattedGaji = formatter.format(gaji);
+        System.out.println("Gaji total: " + formattedGaji);
+
+        scanner.close();
     }
 }
