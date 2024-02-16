@@ -12,6 +12,6 @@
 
 ```bash
 git clone https://github.com/andyrhman/uas-pbo.git
-javac pegawai/*.java
+javac src/pegawai/*.java
 java Main.java
 ```

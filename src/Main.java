@@ -1,3 +1,9 @@
+/*
+ * KODE INI DIBUAT OLEH:
+ * ANDY RAHMAN RAMADHAN
+ * 220401070404
+*/
+
 import java.util.Scanner;
 import java.text.NumberFormat;
 import java.util.Locale;

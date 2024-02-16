@@ -1,3 +1,9 @@
+/*
+ * KODE INI DIBUAT OLEH:
+ * ANDY RAHMAN RAMADHAN
+ * 220401070404
+*/
+
 package pegawai;
 
 public class HRD implements Pegawai {
@@ -7,7 +13,7 @@ public class HRD implements Pegawai {
     private final double TUNJANGAN_ISTRI = 250000;
     private final double TUNJANGAN_ANAK_1 = 90000;
     private final double TUNJANGAN_ANAK_2 = 190000;
-    
+
     @Override
     public double hitungGaji(int jamMasuk, int jamPulang, int jumlahAnak) {
         // Menghitung jam lembur
